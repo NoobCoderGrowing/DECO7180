@@ -24,7 +24,7 @@
 #search{
     position: absolute;
     left: 5%;
-    top: 35%;
+    top: 30%;
     text-align: center;
     margin: auto;
 }
@@ -34,16 +34,18 @@
     height: 75%;
 }
 
+/* searchForm */
 .wyInput input{
     position: absolute;
     width: 350px;
-    height: 25px;
+    height: 30px;
     border-style: solid;
     border-color:  #006083;
     border-radius: 20px;
-    margin-top: 50px;
+    margin-top: 30px;
     background-color: rgba(255, 255, 255, 0);
     left: 20%;
+    z-index: 3;
 
 }
 
@@ -55,7 +57,9 @@
     background-color: #006083;
     color: white;
     right: 26%;
-    margin-top: 50px;
+    margin-top: 30px;
+    height: 30px;
+    z-index: 3;
 }
 
 #arouseSearchBox{
@@ -66,11 +70,70 @@
     padding: 5px 30px 6px 30px;
     background-color: #006083;
     color: white;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: -200px;
     font-size: 16px;
 }
 
+/* search results */
+.result{
+    position: absolute;
+    margin-top: 68px;
+    margin-left: 95px;
+    width: 350px;
+    background-color: white;
+}
+#resultBackground{
+    background-color: white;
+    opacity: 100;
+    z-index: 2;
+    position: absolute;
+}
+.result li{
+    width: 350px;
+    text-align: center;
+    list-style: none;
+    border-left: solid;
+    border-right: solid;
+    background-color: white;
+    padding-bottom: 2px;
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: rgb(190, 190, 190);
+    border-bottom-color: rgba(224, 224, 224, 0.603);
+}
+
+.result li:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: rgb(190, 190, 190);
+}
+
+.result li:hover{
+    background-color: rgb(158, 158, 158);
+}
+
+.option{
+    position: relative;
+    width: 600px;
+    height: 50px;
+    display: block;
+    margin-top: 150px;
+    z-index: 1;
+    text-align: center;
+}
+
+
+#optionsBackground{
+    position: absolute;
+    z-index: 1;
+    left: 100px;
+    top: 100px;
+    height: 50px;
+    margin-top: 100px;
+}
 
 /* facebook,ins... icons*/
 .socialSiteIcons{
