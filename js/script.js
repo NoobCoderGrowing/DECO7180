@@ -13,6 +13,8 @@ function displayForm(){
 let arr = ["French","English","Chinese","Japanese","Indian","Korean","Spanish",
 "Malaysian","German","Russian"]
 
+var options = [];
+
 function updateResult(query) {
     let resultList = document.querySelector(".result");
     resultList.innerHTML = "";
@@ -58,9 +60,29 @@ function generateBox(boxContent){
             langOption.css('height', 20);
       });
     indexOfLang++;
+    options.push(boxContent);
+    console.log(options);
     $("#tags").val("");
 }
 
 function deleteOption(option){
+    Array.prototype.indexOf = function(val) {
+        for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) return i;
+        }
+        return -1;
+        };
+    Array.prototype.remove = function(val) {
+        var index = this.indexOf(val);           
+        if (index > -1) {   
+        this.splice(index, 1);          
+        }    
+        };
+    
     option.remove();
+}
+
+function getOptions(){
+    console.log(options);
+    return options;
 }
