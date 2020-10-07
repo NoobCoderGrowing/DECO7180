@@ -1,0 +1,248 @@
+
+#logo{
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    width: 18px;
+    height: auto;
+
+}
+#contact{
+    position: absolute;
+    right: 15%;
+    bottom: 10px;
+    text-decoration: none;
+    margin: 8px;
+    padding: 5px;
+    color: #006083;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+#search{
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    text-align: center;
+    margin: auto;
+}
+/* slogan style */
+#slogan{
+    width: 75%;
+    height: 75%;
+}
+
+/* searchForm */
+.wyInput input{
+    position: absolute;
+    width: 350px;
+    height: 30px;
+    border-style: solid;
+    border-color:  #006083;
+    border-radius: 20px;
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    left: 20%;
+    z-index: 3;
+
+}
+
+.searchForm button{
+    position: absolute;
+    border-style: none;
+    border-radius: 20px;
+    padding: 5px 20px 6px 20px;
+    background-color: #006083;
+    color: white;
+    right: 26%;
+    margin-top: 30px;
+    height: 30px;
+    z-index: 3;
+}
+
+#arouseSearchBox{
+    position: absolute;
+    height: 30px;
+    border-style: none;
+    border-radius: 20px;
+    padding: 5px 30px 6px 30px;
+    background-color: #006083;
+    color: white;
+    margin-top: 30px;
+    margin-left: -200px;
+    font-size: 16px;
+}
+
+/* search results */
+.result{
+    position: absolute;
+    margin-top: 68px;
+    margin-left: 95px;
+    width: 350px;
+    background-color: white;
+}
+#resultBackground{
+    background-color: white;
+    opacity: 100;
+    z-index: 2;
+    position: absolute;
+}
+.result li{
+    width: 350px;
+    text-align: center;
+    list-style: none;
+    border-left: solid;
+    border-right: solid;
+    background-color: white;
+    padding-bottom: 2px;
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: rgb(190, 190, 190);
+    border-bottom-color: rgba(224, 224, 224, 0.603);
+}
+
+.result li:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: solid;
+    border-width: 2px;
+    border-color: rgb(190, 190, 190);
+}
+
+.result li:hover{
+    background-color: rgb(158, 158, 158);
+}
+
+.option{
+    position: relative;
+    width: 600px;
+    height: 50px;
+    display: block;
+    margin-top: 150px;
+    z-index: 1;
+    text-align: center;
+}
+
+
+#optionsBackground{
+    position: absolute;
+    z-index: 1;
+    left: 100px;
+    top: 100px;
+    height: 50px;
+    margin-top: 100px;
+}
+
+/* facebook,ins... icons*/
+.socialSiteIcons{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    width: 20px;
+}
+
+.socialSiteIcons img{
+    display: block;
+    margin: 10px 10px 20px 0px;
+    size: 80%;
+}
+
+/* rectangle */
+#orangeRe{
+    position: absolute;
+    left: 40%;
+    bottom: -10px;
+    width: 12%;
+}
+
+#cyanRe{
+    position: absolute;
+    left: 60%;
+    width: 14%;
+    top: -210px;
+}
+
+/* images */
+#images img{
+    position: absolute;
+    width: 30%;
+    height: auto;
+    right: 5%;
+    top: 8%;
+}
+
+/* imageController */
+#imageController{
+    position: absolute;
+    right: 2%;
+    top: 40%;
+    display: block;
+    width: 2px;
+}
+
+.line{
+    height: 30px;
+    width: 3px;
+    background-color: #006083;
+}
+
+#line1{
+    position: relative;
+    margin-bottom: 5px;
+}
+
+#line2{
+    position: relative;
+    margin-top: 10px;
+}
+
+.points{
+    position: relative;
+    height: 80px;
+}
+
+#point1{
+    height: 10px;
+}
+
+.button1{
+    position: absolute;
+    top: 5px;
+    right: -2px;
+    border: none;
+    background-color: white;
+    width: 8px;
+}
+
+.button2{
+    position: absolute;
+    top: 15px;
+    right: -2px;
+    border: none;
+    background-color: white;
+    width: 8px;
+}
+
+.button3{
+    position: absolute;
+    top: 25px;
+    right: -2px;
+    border: none;
+    background-color: white;
+    width: 8px;
+}
+
+.button4{
+    position: absolute;
+    top: 35px;
+    right: -2px;
+    border: none;
+    background-color: white;
+    width: 8px;
+}
+
+
+
+
