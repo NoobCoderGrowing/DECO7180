@@ -1,0 +1,103 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: lightgray;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+#map {
+	width: 80vw;
+	height: 80vh;
+	/* Uses viewport (vw & vh) units: https://css-tricks.com/fun-viewport-units */
+	background-color: white;
+	box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
+	position: relative;
+}
+
+
+
+/* list pane*/
+.list{
+	width : 200px;
+	position: absolute;
+	right: 0;
+	z-index: 2000;
+	
+}
+.list ul{
+	list-style: none;
+}
+.list>ul>li{
+	width        : 100%;
+	border-bottom: 1px solid #666;
+	-webkit-transition: .3s ease;
+	-moz-transition: .3s ease;
+	-o-transition: .3s ease;
+			transition: .3s ease;
+}
+.list>ul>li p[class=title]{
+	width      : 100%;
+	text-align : center;
+	background : white;
+	height     : 50px;
+	line-height: 50px;
+	padding    : 0;
+	border     : none;
+	position   : relative;
+	font-size  : 16px;
+	border-radius: 16px;
+}
+.list>ul>li p[class=title]>span{
+	position: absolute;
+	right: 10%;
+}
+
+
+.list>ul>li p:hover{
+	background: #006083;
+	color:white;
+}
+.list-se{
+	overflow: hidden;
+	display: none;
+}
+.list-se>p{
+	background: #444 !important;
+	color     :#ee4977;
+}
+.list-se>li{
+	position: relative;
+	right   : -100%;
+	-webkit-transition: right .5s;
+	-moz-transition   : right .5s;
+	-o-transition     : right .5s;
+	transition        : right .5s;
+}
+.list-se>li>p{
+	background  : #3b3b3b;
+	color       : #f0f0f0;
+	height      : 50px;
+	-webkit-box-sizing :border-box;
+	        box-sizing :border-box;
+	padding-left: 10px;
+	line-height : 50px;
+	border-left : 5px solid #3b3b3b; 
+	-webkit-transition   : border .5s; 
+			 transition  : border .5s;
+	-webkit-transition   : background .3s;
+			 transition  : background .3s;
+}
+.list-se>li>p:hover{
+	border-color: #EE4977; 
+	background  : #5b5b5b;
+}
