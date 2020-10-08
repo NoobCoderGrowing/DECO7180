@@ -7,14 +7,15 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<article id="map">
+
+		<article id="map" onclick="log()">
 
 			<div class="content">
 				
 				<div class="list">
 					<ul>
 						<li id="north">
-							<p class="title"  onclick="Showself('north')">North</p>
+							<p class="title"  onclick="Showself('north')" onmouseover="highlightonmap('north')">North </p>
 						
 							<ul class='list-se'>
 								<p class="title"  onclick="Showself('north')">North</p>
@@ -23,7 +24,7 @@
 							</ul>
 						</li>
 						<li id="center">
-							<p class="title"  onclick="Showself('center')">Center</p>
+							<p class="title"  onclick="Showself('center')" onmouseover="highlightonmap('center')">Center</p>
 						
 							<ul class='list-se'>
 								<p class="title" onclick="Showself('center')">Center</p>
@@ -37,7 +38,7 @@
 							</ul>
 						</li>
 						<li id="west">
-							<p class="title"  onclick="Showself('west')">West</p>
+							<p class="title"  onclick="Showself('west')" onmouseover="highlightonmap('west')">West</p>
 						
 							<ul class='list-se'>
 								<p class="title" onclick="Showself('west')">West</p>
@@ -48,7 +49,7 @@
 							</ul>
 						</li>
 						<li id="east">
-							<p class="title"  onclick="Showself('east')">East</p>
+							<p class="title"  onclick="Showself('east')" onmouseover="highlightonmap('east')">East</p>
 						
 							<ul class='list-se'>
 								<p class="title" onclick="Showself('east')">East</p>
@@ -60,7 +61,7 @@
 			
 						</li>
 						<li id="south">
-							<p class="title"  onclick="Showself('south')">South</p>
+							<p class="title"  onclick="Showself('south')" onmouseover="highlightonmap('south')">South</p>
 						
 							<ul class='list-se'>
 								<p class="title" onclick="Showself('south')">South</p>
@@ -79,6 +80,6 @@
 		
 		<script src="js/jquery-3.4.1.min.js"></script>
 		<script src="js/leaflet.js"></script>
-		<script src="../js/script.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
