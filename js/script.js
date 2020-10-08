@@ -117,3 +117,62 @@ function getOptions(){
     console.log(options);
     return options;
 }
+
+function changeImage(element){
+    console.log(element.id);
+    var elementId =  $('#'+ element.id);
+    elementId.css('right', '-3.5px');
+    elementId.css('width', '12px');
+
+    if (element.id == 'button1'){
+        console.log('right');
+        $('#image1').show();
+        $('#image2').hide();
+        $('#image3').hide();
+        $('#image4').hide();
+        $('#button2').css('right', '-2px');
+        $('#button2').css('width', '8px');
+        $('#button3').css('right', '-2px');
+        $('#button3').css('width', '8px');
+        $('#button4').css('right', '-2px');
+        $('#button4').css('width', '8px');
+
+    } else if (element.id == 'button2'){
+        $('#image2').show();
+        $('#image1').hide();
+        $('#image3').hide();
+        $('#image4').hide();
+        $('#button1').css('right', '-2px');
+        $('#button1').css('width', '8px');
+        $('#button3').css('right', '-2px');
+        $('#button3').css('width', '8px');
+        $('#button4').css('right', '-2px');
+        $('#button4').css('width', '8px');
+
+    } else if (element.id == 'button3'){
+        $('#image3').show();
+        $('#image2').hide();
+        $('#image1').hide();
+        $('#image4').hide();
+        $('#button2').css('right', '-2px');
+        $('#button2').css('width', '8px');
+        $('#button1').css('right', '-2px');
+        $('#button1').css('width', '8px');
+        $('#button4').css('right', '-2px');
+        $('#button4').css('width', '8px');
+
+    } else {
+        $('#image4').show();
+        $('#image2').hide();
+        $('#image3').hide();
+        $('#image1').hide();
+        $('#button2').css('right', '-2px');
+        $('#button2').css('width', '8px');
+        $('#button3').css('right', '-2px');
+        $('#button3').css('width', '8px');
+        $('#button1').css('right', '-2px');
+        $('#button1').css('width', '8px');
+
+    }
+
+}
