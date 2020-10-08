@@ -154,10 +154,12 @@ $.fn.clickdown=function()
 		for(var i=0;i<li.length;i++){
 			li.eq(i).animate({right:'0'},i*25);
 		}
-		$(this).parent().siblings().children('.list-se').children('li').css('right', '-100%');
+        $(this).parent().siblings().children('.list-se').children('li').css('right', '-100%');
+        map.setView([-27.46, 153.12], 11);
 	})
 
 }
+
 $.fn.ad=function()
 {
 	var t = $(this);
@@ -170,6 +172,33 @@ $.fn.ad=function()
 			t.eq(i).children('.list-se').children('p[class=title]').append('<span>-</span>');
 		}
 	}
+}
+
+var layer = [];
+
+
+function mapzoom(area){
+    if(area=="north"){
+        map.setView([-27.36005, 153.06406], 12);
+        var marker_north = L.marker([-27.3, 153.04]).addTo(map);
+        var marker_north = L.marker([-27.36005, 153.06406]).addTo(map);      
+    }
+    if(area=="center"){
+        map.setView([-27.45499, 153.02828], 13);
+        var marker_center = L.marker([-27.45499, 153.02828]).addTo(map);     
+    }
+    if(area=="west"){
+        map.setView([-27.48773, 152.89664], 12);
+        var marker_west = L.marker([-27.48773, 152.89664]).addTo(map);     
+    }
+    if(area=="east"){
+        map.setView([-27.51367, 153.22267], 12);
+        var marker_east = L.marker([-27.51367, 153.22267]).addTo(map);     
+    }
+    if(area=="south"){
+        map.setView([-27.59656, 153.05490], 12);
+        var marker_south = L.marker([-27.59656, 153.05490]).addTo(map);     
+    }
 }
 
 function Showself(area) {
@@ -291,15 +320,14 @@ function highlightonmap(area){
     if(area=="south"){
         geojson_south = {
             "type": "FeatureCollection",
-            "features": [
-                {"type": "Feature",
-        "properties": {
-            "name": "south"},
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[[152.9701, -27.4878], [153.0201, -27.5007], [152.9964, -27.5494], [152.9863, -27.5574], [152.9875, -27.5763], [152.9978, -27.5948], [152.9926, -27.6029], [152.998, -27.6128], [152.9923, -27.6183], [152.9791, -27.6248], [152.9713, -27.6373], [153.0369, -27.6592], [153.0405, -27.6538], [153.0586, -27.6567], [153.0692, -27.6526], [153.0946, -27.6451], [153.1057, -27.5935], [153.1216, -27.5953], [153.1233, -27.5874], [153.1555, -27.5916], [153.1754, -27.6067], [153.1739, -27.5333], [153.1229, -27.5311], [153.0875, -27.4814]]]
-            }
-        }]
+            "features": [{
+                "type": "Feature",
+                "properties": {"name": "south"},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[[152.9701, -27.4878], [153.0201, -27.5007], [152.9964, -27.5494], [152.9863, -27.5574], [152.9875, -27.5763], [152.9978, -27.5948], [152.9926, -27.6029], [152.998, -27.6128], [152.9923, -27.6183], [152.9791, -27.6248], [152.9713, -27.6373], [153.0369, -27.6592], [153.0405, -27.6538], [153.0586, -27.6567], [153.0692, -27.6526], [153.0946, -27.6451], [153.1057, -27.5935], [153.1216, -27.5953], [153.1233, -27.5874], [153.1555, -27.5916], [153.1754, -27.6067], [153.1739, -27.5333], [153.1229, -27.5311], [153.0875, -27.4814]]]
+                }
+            }]
         };
         var layer_south =L.geoJSON(geojson_south, {style: style}).addTo(map); 
         $("#south").mouseout(function(){
