@@ -54,17 +54,19 @@
 
         <div class = "imagesLoad">
             <div id = "images">
-                <img src="images/image_1.png" alt="image1">
-                <img src="images/image_2.png" alt="image2" style="display: none;">
+                <img src="images/image_1.png" id = "image1" alt="image1">
+                <img src="images/image_2.png" id = "image2" alt="image2" style="display: none;">
+                <img src="images/image_3.png" id = "image3" alt="image2" style="display: none;">
+                <img src="images/image_4.png" id = "image4" alt="image2" style="display: none;">
             </div>
 
             <div id = "imageController">
                 <div class="line" id="line1"></div>
                     <div class="points">
-                        <a href="#" class = "button1"><img src="images/bluePoint.png" class = "button1"></a>
-                        <a href="#" class = "button2"><img src="images/orangePoint.png" class = "button2"></a>
-                        <a href="#" class = "button3"><img src="images/lightBluePoint.png" class = "button3"></a>
-                        <a href="#" class = "button4"><img src="images/lightBluePoint.png" class = "button4"></a>
+                        <a href="#" class = "button1"><img src="images/bluePoint.png" class = "button1" id = "button1" onclick="changeImage(this)"></a>
+                        <a href="#" class = "button2"><img src="images/orangePoint.png" class = "button2" id = "button2" onclick="changeImage(this)"></a>
+                        <a href="#" class = "button3"><img src="images/lightBluePoint.png" class = "button3" id = "button3" onclick="changeImage(this)"></a>
+                        <a href="#" class = "button4"><img src="images/lightBluePoint.png" class = "button4" id = "button4" onclick="changeImage(this)"></a>
                     </div>
                 <div class="line" id="line2"></div>
             </div>
