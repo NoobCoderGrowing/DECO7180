@@ -120,7 +120,9 @@ function deleteLangInList(word){
 }
 //API part inplemented by Wenjun Yao
 var queryVaribale={language:"",languageCode:null};
+//use queryResult to get number of people speaking a particualr language in different regions
 var queryResult={};
+// use totalNumber to get population of each region
 var totalNUmber={};
 
 function getOptions(){
