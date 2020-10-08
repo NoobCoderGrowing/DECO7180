@@ -12,10 +12,7 @@ function displayForm(){
     },400);
 }
 
-//Display search results
-// let arr = ["French","English","Chinese","Japanese","Indian","Korean","Spanish",
-// "Malaysian","German","Russian"];
-
+//option array
 let arr = ["French","English","Mandarin","Japanese","Italian","Korean","Spanish",
 "Arabic","German","Russian"];
 
@@ -130,7 +127,16 @@ function getOptions(){
        getQueryVaribale(element);
        queryAPI(queryVaribale.language);
    })
-   console.log(queryResult);
+   console.log(totalNUmber);
+   console.log(queryResult)
+   
+
+
+//    window.localStorage.setItem("queryResult", JSON.stringify(queryResult));
+//    window.localStorage.setItem("totalNumber", JSON.stringify(totalNUmber));
+//    var a=JSON.parse(window.localStorage.getItem("totalNumber"));
+//    console.log(a);
+   window.location = "../map/index.html";
 }
 
 
@@ -205,6 +211,9 @@ function queryAPI(language){
       console.error(error);
     });
 }
+
+
+
 // get population of each region
 window.onload = getTotalNumber();
 
