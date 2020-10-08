@@ -125,7 +125,9 @@ function getOptions(){
        getQueryVaribale(element);
        queryAPI(queryVaribale.language);
    })
-   window.location = "../map/index.html";
+//    console.log(queryResult);
+//    console.log(totalNUmber);
+ window.location = "../map/index.html";
 }
 
 
