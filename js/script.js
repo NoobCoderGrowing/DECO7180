@@ -5,6 +5,8 @@ var queryResult={};
 // use totalNumber to get population of each region
 var totalNUmber={};
 
+window.onload=getTotalNumber;
+
 //home page js
 // Display searchBox
 function displayForm(){
@@ -127,6 +129,7 @@ function getOptions(){
        getQueryVaribale(element);
        queryAPI(queryVaribale.language);
    })
+    console.log(totalNUmber);
     window.location = "../map/index.html";
 }
 
