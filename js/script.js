@@ -1,3 +1,6 @@
+
+
+
 // Display searchBox
 function displayForm(){
     $(".arouseSearchButton").animate({
@@ -115,9 +118,10 @@ function deleteOption(option){
 function deleteLangInList(word){
 
 }
-
+//API part inplemented by Wenjun Yao
 var queryVaribale={language:"",languageCode:null};
 var queryResult={};
+var totalNUmber={};
 
 function getOptions(){
    options.forEach(element=>{
@@ -194,6 +198,44 @@ function queryAPI(language){
         },
         writable: false
       });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+// get population of each region
+window.onload = getTotalNumber();
+
+function getTotalNumber(){
+    fetch(
+        "http://stat.data.abs.gov.au/sdmx-json/data/ABS_C16_T09_SA/3.TOT.3.SA4.301+302+303+304+305/all?startTime=2016&endTime=2016",{
+        method:'GET',
+      }
+    ).then((response)=>response.json()).then(data=>{
+
+     Object.defineProperties(totalNUmber, {
+        BrisbaneEast: {
+          value: data.dataSets[0].series["0:0:0:0:0"].observations[0]['0'],
+          writable: true
+        },
+        BrisbaneNorth: {
+            value: data.dataSets[0].series["0:0:0:0:1"].observations[0]['0'],
+            writable: true
+          },
+          BrisbaneSouth: {
+            value: data.dataSets[0].series["0:0:0:0:2"].observations[0]['0'],
+            writable: true
+          },
+          BrisbaneWest: {
+            value: data.dataSets[0].series["0:0:0:0:3"].observations[0]['0'],
+            writable: true
+          },
+          BrisbaneInnerCity: {
+            value: data.dataSets[0].series["0:0:0:0:4"].observations[0]['0'],
+            writable: true
+          },
+      });
+      console.log(totalNUmber);
     })
     .catch((error) => {
       console.error(error);
