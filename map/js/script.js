@@ -1,9 +1,4 @@
 
-window.onload =()=>{
-    var queryResult=window.localStorage.getItem("queryResult");
-    var totalNumber=JSON.parse(window.localStorage.getItem("totalNumber"));
-    console.log(totalNumber);
-}
 
 
 // Setup the map as per the Leaflet instructions:
