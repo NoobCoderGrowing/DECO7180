@@ -3,7 +3,7 @@ var queryVaribale={language:"",languageCode:null};
 //use queryResult to get number of people speaking a particualr language in different regions
 var queryResult={};
 // use totalNumber to get population of each region
-var totalNUmber={};
+var totalNUmber=new Array();
 
 window.onload=getTotalNumber;
 
@@ -130,7 +130,10 @@ function getOptions(){
        queryAPI(queryVaribale.language);
    })
     console.log(totalNUmber);
-    window.location = "../map/index.html";
+    localStorage.setItem('a',JSON.stringify(totalNUmber));
+    var newTotalNumber=JSON.parse(localStorage.getItem('a'));
+    console.log(newTotalNumber);
+    // window.location = "../map/index.html";
 }
 
 
@@ -220,7 +223,7 @@ function getTotalNumber(){
 
      Object.defineProperties(totalNUmber, {
         BrisbaneEast: {
-          value: data.dataSets[0].series["0:0:0:0:0"].observations[0]['0'],
+          value:  data.dataSets[0].series["0:0:0:0:0"].observations[0]['0'],
           writable: true
         },
         BrisbaneNorth: {
