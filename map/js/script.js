@@ -1,8 +1,33 @@
+window.onload=function(){
+    if(localStorage.getItem('newTotalNumber')!='{}'&&localStorage.getItem('newQueryResult')!='{}'){
+        console.log(JSON.parse(localStorage.getItem('newTotalNumber')));
+        var totalNum=JSON.parse(localStorage.getItem('newTotalNumber'));
+        console.log(JSON.parse(localStorage.getItem('newQueryResult')));
+        var result=JSON.parse(localStorage.getItem('newQueryResult'));
+        var east=0;
+        var north=0;
+        var south=0;
+        var west=0;
+        var innerCity=0;
+        Object.keys(result).forEach(function(key){
+            east+=result[key]['BrisbaneEast'];
+            north+=result[key]['BrisbaneNorth'];
+            south+=result[key]['BrisbaneSouth'];
+            west+=result[key]['BrisbaneWest'];
+            innerCity+=result[key]['BrisbaneInnerCity'];
+        })
+        document.querySelector('.f13').innerHTML=`${Math.round(east/totalNum['BrisbaneEast']*100)}% people alike`;
+        document.querySelector('.f11').innerHTML=`${Math.round(north/totalNum['BrisbaneNorth']*100)}% people alike`;
+        document.querySelector('.f15').innerHTML=`${Math.round(south/totalNum['BrisbaneSouth']*100)}% people alike`;
+        document.querySelector('.f14').innerHTML=`${Math.round(west/totalNum['BrisbaneWest']*100)}% people alike`;
+        document.querySelector('.f12').innerHTML=`${Math.round(innerCity/totalNum['BrisbaneInnerCity']*100)}% people alike`;        
+    }
+}
+
+
+
 
 //Map page
-// Setup the map as per the Leaflet instructions:
-// https://leafletjs.com/examples/quick-start/
-
 var map = L.map("map").setView([-27.46, 153.12], 11);
 
 L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}", {
@@ -11,11 +36,6 @@ L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map
 	
 	
 }).addTo(map);
-
-
-
-
-
 
 var geojson ={
     "type": "FeatureCollection",
@@ -62,10 +82,7 @@ var geojson ={
         }]
     };
 
-
-
 L.geoJSON(geojson).addTo(map);
-
 function style(feature) {
     return {
         fillColor: '#ced8db',
@@ -77,10 +94,8 @@ function style(feature) {
 }
 
 L.geoJson(geojson, {style: style}).addTo(map);
-
 function highlightFeature(e) {
     var layer = e.target;
-    console.log(e.target)
 
     layer.setStyle({
 		fillColor: '#8d969a',
@@ -102,7 +117,6 @@ function resetHighlight(e) {
     geo.resetStyle(e.target);
 }
 
-
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
@@ -111,17 +125,13 @@ function onEachFeature(feature, layer) {
     });
 }
 
-
-
 geo = L.geoJson(geojson, {
     style: style,
     onEachFeature: onEachFeature
 }).addTo(map);
 
 
-
 //list pane
-
 jQuery(document).ready(function($)
 {
 	$('.list ul li p').clickdown();
@@ -129,8 +139,6 @@ jQuery(document).ready(function($)
 	$('.list>ul>li').ad();
 	console.log($().index())
 });
-
-
 $.fn.clickup=function()
 {
 	$(this).click(function(){
@@ -162,15 +170,15 @@ $.fn.ad=function()
 		var count = t.eq(i).children().children().length;
 		if (count>1) 
 		{
-			t.eq(i).children('p[class=title]').append('<span>+</span>');
-			t.eq(i).children('.list-se').children('p[class=title]').append('<span>-</span>');
+			t.eq(i).children('p[class=title]');
+			t.eq(i).children('.list-se').children('p[class=title]');
 		}
 	}
 }
 
+
+//map zoom
 var layer = [];
-
-
 function mapzoom(area){
     if(area=="north"){
         map.setView([-27.36005, 153.06406], 12);
@@ -195,6 +203,7 @@ function mapzoom(area){
     }
 }
 
+//click hide other areas
 function Showself(area) {
     if(area=="north"){
         document.getElementById("center").style.display = ( document.getElementById("center").style.display != 'none' ? 'none' : 'block' );
@@ -229,7 +238,9 @@ function Showself(area) {
     
 }
 
-function highlightonmap(area){
+//mouseon
+var imgid;
+function highlightonmap(area, imgid){
     function style(feature) {
         return {
             fillColor: '#8d969a',
@@ -241,6 +252,7 @@ function highlightonmap(area){
     }
 
     if(area=="north"){
+    
         geojson_north =  {
             "type": "FeatureCollection",
             "features": [{
@@ -328,4 +340,110 @@ function highlightonmap(area){
             layer_south.remove()
          });
     }
+    if(imgid=='#pic'){$(imgid).attr('src','css/images/scrolldown_clicked.png');}
+    if(imgid=='#pic1'){$(imgid).attr('src','css/images/scrolldown_clicked.png');}
+    if(imgid=='#pic2'){$(imgid).attr('src','css/images/scrolldown_clicked.png');}
+    if(imgid=='#pic3'){$(imgid).attr('src','css/images/scrolldown_clicked.png');}
+    if(imgid=='#pic4'){$(imgid).attr('src','css/images/scrolldown_clicked.png');}
+}
+
+function hoverscroll(imgid){
+    if(imgid=='#picR'){$(imgid).attr('src','css/images/scrolldown_clickedReverse.png');}
+    if(imgid=='#picR1'){$(imgid).attr('src','css/images/scrolldown_clickedReverse.png');}
+    if(imgid=='#picR2'){$(imgid).attr('src','css/images/scrolldown_clickedReverse.png');}
+    if(imgid=='#picR3'){$(imgid).attr('src','css/images/scrolldown_clickedReverse.png');}
+    if(imgid=='#picR4'){$(imgid).attr('src','css/images/scrolldown_clickedReverse.png');}
+}
+function highlightarrow(imgname){
+    if(imgname=='#arrow0'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow1'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow2'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow3'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow4'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow5'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow6'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow7'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow8'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow9'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow10'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow11'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow12'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow13'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow14'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow15'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow16'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow17'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow18'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow19'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow20'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow21'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow22'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow23'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow24'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow25'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow26'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow27'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow28'){$(imgname).attr('src','css/images/arrow.png');}
+    if(imgname=='#arrow29'){$(imgname).attr('src','css/images/arrow.png');}
+}
+
+//mouseout
+function resetscroll(imgid){
+    if(imgid=='#pic'){
+        $(imgid).attr('src','css/images/scrolldown_grey.png');
+    }
+    if(imgid=='#pic1'){
+        $(imgid).attr('src','css/images/scrolldown_cobalt.png');
+    }
+    if(imgid=='#pic2'){
+        $(imgid).attr('src','css/images/scrolldown_cyan.png');
+    }
+    if(imgid=='#pic3'){
+        $(imgid).attr('src','css/images/scrolldown_orange.png');
+    }
+    if(imgid=='#pic4'){
+        $(imgid).attr('src','css/images/scrolldown_orange1.png');
+    }
+    
+}
+
+function resethoverscroll(imgid){
+    if(imgid=='#picR'){$(imgid).attr('src','css/images/scrolldown_greyReverse.png');}
+    if(imgid=='#picR1'){$(imgid).attr('src','css/images/scrolldown_cobaltReverse.png');}
+    if(imgid=='#picR2'){$(imgid).attr('src','css/images/scrolldown_cyanReverse.png');}
+    if(imgid=='#picR3'){$(imgid).attr('src','css/images/scrolldown_orangeReverse.png');}
+    if(imgid=='#picR4'){$(imgid).attr('src','css/images/scrolldown_orange1Reverse.png');}
+}
+function resethighlightarrow(imgname){
+    if(imgname=='#arrow0'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow1'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow2'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow3'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow4'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow5'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow6'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow7'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow8'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow9'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow10'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow11'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow12'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow13'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow14'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow15'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow16'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow17'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow18'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow19'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow20'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow21'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow22'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow23'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow24'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow25'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow26'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow27'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow28'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    if(imgname=='#arrow29'){$(imgname).attr('src','css/images/arrow_unclick.png');}
+    
 }

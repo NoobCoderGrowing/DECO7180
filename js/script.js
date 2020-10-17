@@ -3,7 +3,7 @@ var queryVaribale={language:"",languageCode:null};
 //use queryResult to get number of people speaking a particualr language in different regions
 var queryResult={};
 // use totalNumber to get population of each region
-var totalNUmber=new Array();
+var totalNUmber={};
 
 window.onload=getTotalNumber;
 
@@ -124,17 +124,7 @@ function deleteLangInList(word){
 }
 
 
-function getOptions(){
-   options.forEach(element=>{
-       getQueryVaribale(element);
-       queryAPI(queryVaribale.language);
-   })
-    console.log(totalNUmber);
-    localStorage.setItem('a',JSON.stringify(totalNUmber));
-    var newTotalNumber=JSON.parse(localStorage.getItem('a'));
-    console.log(newTotalNumber);
-    // window.location = "../map/index.html";
-}
+
 
 
 function getQueryVaribale(element){
@@ -201,7 +191,8 @@ function queryAPI(language){
             'BrisbaneWest':data.dataSets[0].series["0:0:0:0:3"].observations[0]['0'],
             'BrisbaneInnerCity':data.dataSets[0].series["0:0:0:0:4"].observations[0]['0'],
         },
-        writable: false
+        writable: true,
+        enumerable: true
       });
     })
     .catch((error) => {
@@ -224,30 +215,51 @@ function getTotalNumber(){
      Object.defineProperties(totalNUmber, {
         BrisbaneEast: {
           value:  data.dataSets[0].series["0:0:0:0:0"].observations[0]['0'],
-          writable: true
+          writable: true,
+          enumerable: true
         },
         BrisbaneNorth: {
             value: data.dataSets[0].series["0:0:0:0:1"].observations[0]['0'],
-            writable: true
+            writable: true,
+            enumerable: true
           },
           BrisbaneSouth: {
             value: data.dataSets[0].series["0:0:0:0:2"].observations[0]['0'],
-            writable: true
+            writable: true,
+            enumerable: true
           },
           BrisbaneWest: {
             value: data.dataSets[0].series["0:0:0:0:3"].observations[0]['0'],
-            writable: true
+            writable: true,
+            enumerable: true
           },
           BrisbaneInnerCity: {
             value: data.dataSets[0].series["0:0:0:0:4"].observations[0]['0'],
-            writable: true
-          },
+            writable: true,
+            enumerable: true
+          }
       });
     })
     .catch((error) => {
       console.error(error);
     });
 }
+
+function getOptions(){
+    options.forEach(element=>{
+        getQueryVaribale(element);
+        queryAPI(queryVaribale.language); 
+    });
+    
+     localStorage.setItem('newQueryResult',JSON.stringify(queryResult));
+     localStorage.setItem('newTotalNumber',JSON.stringify(totalNUmber));
+     var a=localStorage.getItem('newQueryResult');
+     if(a==='{}'){
+         return;
+     }else{
+     }
+     window.location='../map/index.html';
+ }
 
     
 

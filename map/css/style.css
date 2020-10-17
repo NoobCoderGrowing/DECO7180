@@ -28,7 +28,7 @@ body {
 
 /* list pane*/
 .list{
-	width : 200px;
+	width : 250px;
 	position: absolute;
 	right: 0;
 	z-index: 2000;
@@ -37,30 +37,24 @@ body {
 .list ul{
 	list-style: none;
 }
-.list>ul>li{
-	width        : 100%;
-	border-bottom: 1px solid #666;
-	-webkit-transition: .3s ease;
-	-moz-transition: .3s ease;
-	-o-transition: .3s ease;
-			transition: .3s ease;
-}
+
 .list>ul>li p[class=title]{
 	width      : 100%;
-	text-align : center;
+	text-align : left;
 	background : white;
-	height     : 50px;
-	line-height: 50px;
+	height     : 80px;
+	line-height: 20px;
 	padding    : 0;
 	border     : none;
 	position   : relative;
-	font-size  : 16px;
+	font-size  : 12px;
+	font-weight: bold;
 	border-radius: 16px;
+	padding-top: 10px;
+	padding-left: 15px;
 }
-.list>ul>li p[class=title]>span{
-	position: absolute;
-	right: 10%;
-}
+
+
 
 
 .list>ul>li p:hover{
@@ -70,34 +64,71 @@ body {
 .list-se{
 	overflow: hidden;
 	display: none;
+	width : 250px;
+	position: absolute;
+	right: 0;
+	z-index: 2000;
 }
 .list-se>p{
-	background: #444 !important;
-	color     :#ee4977;
+	background: white;
+	color     : #006083;
+	
 }
 .list-se>li{
 	position: relative;
-	right   : -100%;
-	-webkit-transition: right .5s;
-	-moz-transition   : right .5s;
-	-o-transition     : right .5s;
-	transition        : right .5s;
 }
-.list-se>li>p{
-	background  : #3b3b3b;
-	color       : #f0f0f0;
-	height      : 50px;
-	-webkit-box-sizing :border-box;
-	        box-sizing :border-box;
+.list>ul>li>.list-se>li p:hover{
+	background: white;
+	color: #006083;
+}
+
+.list>ul>li>.list-se>li p{
+	background  : white;
+	color       : #8d969a;
+	height      : 60px;
+	position: relative;
 	padding-left: 10px;
-	line-height : 50px;
-	border-left : 5px solid #3b3b3b; 
-	-webkit-transition   : border .5s; 
-			 transition  : border .5s;
-	-webkit-transition   : background .3s;
-			 transition  : background .3s;
+	line-height : 20px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	padding-top: 9px;
 }
-.list-se>li>p:hover{
-	border-color: #EE4977; 
-	background  : #5b5b5b;
+
+.list>ul>li>.list-se>li .more{
+	height: 35px;
+	font-weight: bold;
+	color: #006083;
+}
+.list>ul>li>.list-se>li .more:hover{
+	color: #000103;
+}
+.f0{
+	line-height: 10px;
+	padding: 0;
+	margin: 0;
+	font-size: 10px;
+	font-weight:100;
+}
+.f1{
+	position: absolute;
+	right: 2%;
+	bottom: 25%;
+}
+.f1 img{
+	width: 75%;
+}
+.f2{
+	position: absolute;
+	left: 15px;
+	bottom: 25%;
+}
+.f2 img{
+	width: 18%;
+	float: left;
+}
+.f3{
+	position: absolute;
+	right: 10%;
+	bottom: 25%;
 }
