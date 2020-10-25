@@ -2,6 +2,10 @@ function landLord(){
     window.location="../landlord.html";
 }
 
+function home(){
+    window.location="../index.html";
+}
+
 window.onload=function(){
     if(localStorage.getItem('newTotalNumber')!='{}'&&localStorage.getItem('newQueryResult')!='{}'){
         console.log(JSON.parse(localStorage.getItem('newTotalNumber')));

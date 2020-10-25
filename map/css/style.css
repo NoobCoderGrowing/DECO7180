@@ -15,6 +15,33 @@ body {
 	position: relative;
 }
 
+#logo{
+	top:30px;
+	left:1150px;
+	position: absolute;
+}
+
+#home{
+	position: absolute;
+	width: 30%;
+	left:-900px;
+	bottom: 5px;
+}
+
+.navigation {
+	position: absolute;
+	left:-850px;
+	bottom: 5px;
+	font-size: 20px;
+	color:black;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.navigation:hover {
+	color: rgb(62, 9, 160);
+}
+
 #map {
 	width: 80vw;
 	height: 80vh;
