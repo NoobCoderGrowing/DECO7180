@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Week 6 Workshop: Exercise 2</title>
+		<link rel="stylesheet" href="css/leaflet.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id=logo>
+			<img id='home' src="./css/images/home.png">
+			<a class="navigation" href="../index.html">HOME</a>
+			<img src="./css/images/5plus1.png"> 	
+		</div>
+
+		<article id="map">
+
+			<div class="content">
+				
+				<div class="list">
+					<ul>
+						<li id="north">
+							<p class="title"  onclick="Showself('north');mapzoom('north')" onmouseover="highlightonmap('north', '#pic')" onmouseout="resetscroll('#pic')">
+								Brisbane North <br>
+								<span class="f0 f11">58% people alike</span><br>
+								<span class="f1"><img id="pic" src="css/images/scrolldown_grey.png"></span>
+								<span class="f0">93 landlords</span>
+							</p>
+
+							<ul class='list-se'>
+								<p class="title"  onclick="Showself('north')" onmouseover="hoverscroll('#picR')" onmouseout="resethoverscroll('#picR')">
+									Brisbane North <br>
+									<span class="f0 f11">58% population</span><br>
+									<span class="f1"><img id="picR" src="css/images/scrolldown_greyReverse.png"></span>
+									<span class="f0">93 landlords</span>
+								</p>
+								
+								<li>
+									<p onmouseover="highlightarrow('#arrow0')"  onmouseout="resethighlightarrow('#arrow0')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow0" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow1')"  onmouseout="resethighlightarrow('#arrow1')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow1" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow2')"  onmouseout="resethighlightarrow('#arrow2')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow2" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow3')"  onmouseout="resethighlightarrow('#arrow3')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow3" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow4')"  onmouseout="resethighlightarrow('#arrow4')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow4" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow5')"  onmouseout="resethighlightarrow('#arrow5')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow5" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li><p class="more"> SEE MORE</p></li>
+							</ul>
+						</li>
+						<li id="center">
+							<p class="title"  onclick="Showself('center');mapzoom('center')"  onmouseover="highlightonmap('center', '#pic1')" onmouseout="resetscroll('#pic1')">
+								Brisbane InnerCity<br>
+								<span class="f0 f12">58% population</span><br>
+								<span class="f1"><img id="pic1" src="css/images/scrolldown_cobalt.png"></span>
+								<span class="f0">93 landlords</span>
+							</p>
+						
+							<ul class='list-se'>
+								<p class="title" onclick="Showself('center')" onmouseover="hoverscroll('#picR1')" onmouseout="resethoverscroll('#picR1')">
+									Brisbane InnerCity<br>
+									<span class="f0 f12">58% population</span><br>
+									<span class="f1"><img id="picR1" src="css/images/scrolldown_cobaltReverse.png"></span>
+									<span class="f0">93 landlords</span>
+								</p>
+								
+								<li>
+									<p onmouseover="highlightarrow('#arrow6')"  onmouseout="resethighlightarrow('#arrow6')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow6" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow7')"  onmouseout="resethighlightarrow('#arrow7')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow7" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow8')"  onmouseout="resethighlightarrow('#arrow8')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow8" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow9')"  onmouseout="resethighlightarrow('#arrow9')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow9" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow10')"  onmouseout="resethighlightarrow('#arrow10')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow10" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow11')"  onmouseout="resethighlightarrow('#arrow11')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow11" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li><p class="more"> SEE MORE</p></li>
+							</ul>
+						</li>
+						<li id="west">
+							<p class="title"  onclick="Showself('west');mapzoom('west')" onmouseover="highlightonmap('west', '#pic2')" onmouseout="resetscroll('#pic2')">
+								Brisbane East<br>
+								<span class="f0 f13">58% population</span><br>
+								<span class="f1"><img id="pic2" src="css/images/scrolldown_cyan.png"></span>
+								<span class="f0">93 landlords</span>
+							</p>
+						
+							<ul class='list-se'>
+								<p class="title" onclick="Showself('west')" onmouseover="hoverscroll('#picR2')" onmouseout="resethoverscroll('#picR2')">
+									Brisbane East <br>
+									<span class="f0 f13">58% population</span><br>
+									<span class="f1"><img id="picR2" src="css/images/scrolldown_cyanReverse.png"></span>
+									<span class="f0">93 landlords</span>
+								</p>
+							
+								<li>
+									<p onmouseover="highlightarrow('#arrow12')"  onmouseout="resethighlightarrow('#arrow12')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow12" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow13')"  onmouseout="resethighlightarrow('#arrow13')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow13" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow14')"  onmouseout="resethighlightarrow('#arrow14')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow14" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow15')"  onmouseout="resethighlightarrow('#arrow15')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow15" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow16')"  onmouseout="resethighlightarrow('#arrow16')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow16" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow17')"  onmouseout="resethighlightarrow('#arrow17')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow17" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li><p class="more"> SEE MORE</p></li>
+							</ul>
+						</li>
+						<li id="east">
+							<p class="title"  onclick="Showself('east');mapzoom('east')" onmouseover="highlightonmap('east', '#pic3')" onmouseout="resetscroll('#pic3')">
+								Brisbane West<br>
+								<span class="f0 f14">58% population</span><br>
+								<span class="f1"><img id="pic3" src="css/images/scrolldown_orange.png"></span>
+								<span class="f0">93 landlords</span>
+							</p>
+						
+							<ul class='list-se'>
+								<p class="title" onclick="Showself('east')" onmouseover="hoverscroll('#picR3')" onmouseout="resethoverscroll('#picR3')">
+									Brisbane West <br>
+									<span class="f0 f14">58% population</span><br>
+									<span class="f1"><img id="picR3" src="css/images/scrolldown_orangeReverse.png"></span>
+									<span class="f0">93 landlords</span>
+								</p>
+
+								<li>
+									<p onmouseover="highlightarrow('#arrow18')"  onmouseout="resethighlightarrow('#arrow18')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow18" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow19')"  onmouseout="resethighlightarrow('#arrow19')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow19" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow20')"  onmouseout="resethighlightarrow('#arrow20')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow20" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow21')"  onmouseout="resethighlightarrow('#arrow21')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow21" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow22')"  onmouseout="resethighlightarrow('#arrow22')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow22" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow23')"  onmouseout="resethighlightarrow('#arrow23')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow23" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li><p class="more"> SEE MORE</p></li>
+							</ul>
+			
+						</li>
+						<li id="south">
+							<p class="title"  onclick="Showself('south');mapzoom('south')" onmouseover="highlightonmap('south', '#pic4')" onmouseout="resetscroll('#pic4')">
+								Brisbane South<br>
+								<span class="f0 f15">58% population</span><br>
+								<span class="f1"><img id="pic4" src="css/images/scrolldown_orange1.png"></span>
+								<span class="f0">93 landlords</span>
+							</p>
+						
+							<ul class='list-se'>
+								<p class="title" onclick="Showself('south')" onmouseover="hoverscroll('#picR4')" onmouseout="resethoverscroll('#picR4')">
+									Brisbane South<br>
+									<span class="f0 f15">58% population</span><br>
+									<span class="f1"><img id="picR4" src="css/images/scrolldown_orange1Reverse.png"></span>
+									<span class="f0">93 landlords</span>
+								</p>
+								
+								<li>
+									<p onmouseover="highlightarrow('#arrow24')"  onmouseout="resethighlightarrow('#arrow24')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow24" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow25')"  onmouseout="resethighlightarrow('#arrow25')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow25" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow26')"  onmouseout="resethighlightarrow('#arrow26')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow26" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow27')"  onmouseout="resethighlightarrow('#arrow27')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow27" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow28')"  onmouseout="resethighlightarrow('#arrow28')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow28" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li>
+									<p onmouseover="highlightarrow('#arrow29')"  onmouseout="resethighlightarrow('#arrow29')">
+									<span onclick="landLord()" class="f2"><img class="profile" src="css/images/profile.png"></span>
+									JOHN ADAMS<br> 
+									<span class="f0">3 properties</span>
+									<span class="f3"><img id="arrow29" src="css/images/arrow_unclick.png"></span>
+									</p>	
+								</li>
+								<li><p class="more"> SEE MORE</p></li>
+							</ul>
+			
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</article>
+		
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/leaflet.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

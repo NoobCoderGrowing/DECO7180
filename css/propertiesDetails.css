@@ -1,0 +1,251 @@
+#test{
+    height: 3000px;
+}
+#show-popup{
+    width: 550px;
+    height: 1250px;
+    position: absolute;
+    right:32%;
+    margin: 0px;
+    border-radius: 10px;
+    background: white;
+    opacity: 0;
+    transition: all 0.5s ease;
+    visibility: hidden;
+    box-shadow: rgba(0,0,0,0.25) 5px 5px 10px;
+}
+
+/* #show-popup .properties-details{
+    background: white;
+} */
+
+.slideshow { margin: auto;
+width: 300px;
+position: absolute;
+align-self: center;
+margin-right: 85px;
+top: 280px;}
+.slideshow img { width: 90px; height: 90px; padding: 6px;border-radius: 10px; }
+div.responsive img { width: auto; height: auto }
+div.vertical { width: 100px }
+.center a{
+    text-decoration: none;
+}
+#prev{
+    position: absolute;
+    left: 25px;
+    size: 15px;
+    top: 340px;
+    
+}
+#next{
+    position: absolute;
+    right: 45px;
+    top: 340px;
+    size: 15px;
+}
+
+#show-popup .close-button a{
+	color: black;
+	text-decoration: none;
+	font-size: 1em;
+	position: absolute;
+	top: 0;
+	right:0;
+	margin: 1em;
+}
+
+#show-popup .close-button a:before{
+    content: "\2716"; 
+    padding-right: 5px;
+    padding-top: 0px;
+}
+
+#show-popup .house-image img{
+    position: absolute;
+    top: 40px;
+    align-self: center;
+    width: 80%;
+    height: 20%;
+    border-radius: 10px;
+}
+
+/* body.show-properties-popup{
+	
+} */
+
+body.show-properties-popup #show-popup{
+	visibility: visible;
+	opacity: 1;
+}
+
+#properties-details-info{
+    position: absolute;
+    top: 420px;
+    left: 20px;
+}
+
+#room-type{
+    font-size: 25px;
+    font-weight: bold;
+    color: #00baff;
+    padding: 0;
+    margin: 0;
+}
+
+#basic-info{
+    font-size: 15px;
+    color: gray;
+    padding: 0;
+    margin: 2px;
+}
+
+#price{
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff8900;
+    padding: 0;
+    margin: 0;
+}
+
+#detailes{
+    padding: 0;
+    margin: 0;
+}
+.detail{
+    font-size: 15px;
+    font-weight: bold;
+    color: #006083;
+}
+
+#nearby{
+    margin: 2px;
+}
+
+#nearby div{
+    float: left;
+    padding-left: 10px;
+}
+
+#location-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #00baff;
+    padding: 0;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+.detailed-location{
+    position: relative;
+    padding-bottom: 10px;
+    margin: 0;
+}
+.detailed-location img{
+    width: 20px;
+    height: auto;
+    float: left;
+}
+
+.detailed-location p{
+    font-size: 15px;
+    float: left;
+    color: grey;
+}
+
+.nearby-facility{
+    font-size: 15px;
+    font-weight: bold;
+    color: grey;
+}
+.nearby-facility-name{
+    font-size: 15px;
+    color: grey;
+    margin: 0;
+}
+.nearby-facility-distance{
+    font-size: 10px;
+    color: grey;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.f-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #00baff;
+    margin-top: 20px;
+}
+#furniture{
+    position: relative;
+}
+.furnitures{
+    font-size: 15px;
+    color:grey;
+}
+
+#book{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+#book div{
+    float: left;
+    margin-right: 35px;
+}
+
+#book div img{
+    float: left;
+    width: 25px;
+    height: auto;
+    margin-top: 18px;
+}
+
+#book div p{
+    float: left;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#book-button{
+    position: absolute;
+    border-style: none;
+    border-radius: 10px;
+    padding: 5px 20px 6px 20px;
+    background-color: #00baff;
+    color: white;
+    left:430px;
+    top: 15px;
+    height: 30px;
+}
+.contact-form{
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    
+}
+.contact-form div{
+    float: left;
+    margin-right: 90px;
+    margin-top: 0px;
+}
+
+.form{
+    color: #006083;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.form input{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-color: #006083;
+    border-width: 1px;
+}
+
+.form-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff8900;
+}

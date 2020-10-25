@@ -1,3 +1,13 @@
+//API part inplemented by Wenjun Yao
+var queryVaribale={language:"",languageCode:null};
+//use queryResult to get number of people speaking a particualr language in different regions
+var queryResult={};
+// use totalNumber to get population of each region
+var totalNUmber={};
+
+window.onload=getTotalNumber;
+
+//home page js
 // Display searchBox
 function displayForm(){
     $(".arouseSearchButton").animate({
@@ -5,13 +15,13 @@ function displayForm(){
     },700);
     setTimeout(function(){
         $(".searchForm").show();
-        $(".arouseSearchButton").hide();
+        $(".arouseSearchButton").hide()
     },400);
 }
 
-//Display search results
-let arr = ["French","English","Chinese","Japanese","Indian","Korean","Spanish",
-"Malaysian","German","Russian"]
+//option array
+let arr = ["French","English","Mandarin","Japanese","Italian","Korean","Spanish",
+"Arabic","German","Russian"];
 
 var options = [];
 
@@ -113,10 +123,146 @@ function deleteLangInList(word){
 
 }
 
-function getOptions(){
-    console.log(options);
-    return options;
+
+
+
+
+function getQueryVaribale(element){
+    switch(element){
+        case "French":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=2101;
+            break
+        case "English":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=1201;
+            break
+        case "Mandarin":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=7104;
+            break
+        case "Japanese":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=7201;
+            break
+        case "Korean":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=7301;
+            break
+        case "Spanish":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=2303;
+            break
+        case "German":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=1301;
+            break
+        case "Russian":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=3402;
+            break
+        case "Italian":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=2401;
+            break
+        case "Arabic":
+            queryVaribale.language=element;
+            queryVaribale.languageCode=4202;
+            break
+    }
 }
+
+function queryAPI(language){
+    fetch(
+        `http://stat.data.abs.gov.au/sdmx-json/data/ABS_C16_T09_SA/3.${queryVaribale.languageCode}.3.SA4.301+302+303+304+305/all?startTime=2016&endTime=2016`,{
+        method:'GET',
+      }
+    ).then((response)=>response.json()).then(data=>{
+
+     if(queryResult[language]!=null){
+         return;
+     }
+
+     Object.defineProperty(queryResult, language, {
+        value: {
+            'BrisbaneEast':data.dataSets[0].series["0:0:0:0:0"].observations[0]['0'],
+            'BrisbaneNorth':data.dataSets[0].series["0:0:0:0:1"].observations[0]['0'],
+            'BrisbaneSouth':data.dataSets[0].series["0:0:0:0:2"].observations[0]['0'],
+            'BrisbaneWest':data.dataSets[0].series["0:0:0:0:3"].observations[0]['0'],
+            'BrisbaneInnerCity':data.dataSets[0].series["0:0:0:0:4"].observations[0]['0'],
+        },
+        writable: true,
+        enumerable: true
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+
+
+// get population of each region
+// window.onload = getTotalNumber();
+
+function getTotalNumber(){
+    fetch(
+        "http://stat.data.abs.gov.au/sdmx-json/data/ABS_C16_T09_SA/3.TOT.3.SA4.301+302+303+304+305/all?startTime=2016&endTime=2016",{
+        method:'GET',
+      }
+    ).then((response)=>response.json()).then(data=>{
+
+     Object.defineProperties(totalNUmber, {
+        BrisbaneEast: {
+          value:  data.dataSets[0].series["0:0:0:0:0"].observations[0]['0'],
+          writable: true,
+          enumerable: true
+        },
+        BrisbaneNorth: {
+            value: data.dataSets[0].series["0:0:0:0:1"].observations[0]['0'],
+            writable: true,
+            enumerable: true
+          },
+          BrisbaneSouth: {
+            value: data.dataSets[0].series["0:0:0:0:2"].observations[0]['0'],
+            writable: true,
+            enumerable: true
+          },
+          BrisbaneWest: {
+            value: data.dataSets[0].series["0:0:0:0:3"].observations[0]['0'],
+            writable: true,
+            enumerable: true
+          },
+          BrisbaneInnerCity: {
+            value: data.dataSets[0].series["0:0:0:0:4"].observations[0]['0'],
+            writable: true,
+            enumerable: true
+          }
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+function getOptions(){
+    options.forEach(element=>{
+        getQueryVaribale(element);
+        queryAPI(queryVaribale.language); 
+    });
+    
+     localStorage.setItem('newQueryResult',JSON.stringify(queryResult));
+     localStorage.setItem('newTotalNumber',JSON.stringify(totalNUmber));
+     var a=localStorage.getItem('newQueryResult');
+     if(a==='{}'){
+         return;
+     }else{
+     }
+     window.location='./map/index.html';
+ }
+
+    
+
 
 function changeImage(element){
     console.log(element.id);

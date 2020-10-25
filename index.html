@@ -9,6 +9,7 @@
     </head>
 
     <body>
+        
         <img src="images/5plus1.png" id="logo" alt = 'logo'>
 
         <a href="contact.html" id="contact">CONTACT US <img src = "images/arrow.png"></a>
@@ -22,15 +23,18 @@
                 <div class="ui-widget">
                     <form class="searchForm" style="display:none;">
                         <input id="tags" oninput="updateResult(this.value)" name="language" type="search" >
-                        <button type="submit" onclick="getOptions()">Search</button>
+                        <button type="button" onclick="getOptions()">Search</button>
                     </form>
 
                     <div id='resultBackground'>
+                        <!-- drop down match -->
                         <ul id = "result-list" class="result">
+                            <!-- <li onclick="generateBox(this.innerHTML)" class="list-group-item">French</li> -->
                         </ul>
                     </div>
 
                     <div id='optionsBackground'>
+                        <!-- where selected item is -->
                         <div id = "optionsBox" class="options"></div>
                     </div>
                 </div>
