@@ -1,3 +1,7 @@
+function landLord(){
+    window.location="../landlord.html";
+}
+
 window.onload=function(){
     if(localStorage.getItem('newTotalNumber')!='{}'&&localStorage.getItem('newQueryResult')!='{}'){
         console.log(JSON.parse(localStorage.getItem('newTotalNumber')));

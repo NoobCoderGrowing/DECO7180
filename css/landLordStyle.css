@@ -1,0 +1,271 @@
+
+body{
+    background-color: #f2f2f2;
+}
+
+
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    width:100vw;
+    height: 100vh;
+}
+
+.mainContainer .left{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 85vh;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin-top:10vh;
+    margin-left: 1vw;
+    align-items: center;
+    position: relative;
+    box-shadow: 1px 3px #8d969a;
+   
+}
+
+.hostProfile{
+    position: absolute;
+    width: 200px;
+    height: 5%;
+    top:-10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    left:5%;
+    color: #006083;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.hostProfile img{
+    height: 60%;
+}
+
+.mainContainer .left .profilePhoto{
+   width: 20vh;
+   height: 20vh;
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color:#bce0fd;
+   border-radius: 10vh;
+   margin-top: 5vh;
+}
+
+.mainContainer .left .profilePhoto img{
+    height: 40%;
+ }
+
+
+ .mainContainer .left .bold{
+    font-weight: bold;
+    color: #006083;
+   
+}
+
+.mainContainer .left .regular{
+    color: #006083;
+   
+}
+
+.mainContainer .left .personInfo{
+    width: 80%;
+}
+
+.mainContainer .left .personInfo .boldTag{
+    font-weight: medium;
+    color:#006083;
+}
+
+.mainContainer .left .gender{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1vh;
+    color: #8d969a;
+}
+
+.mainContainer .left .phone{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1vh;
+    color: #8d969a;
+}
+
+.mainContainer .left .email{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1vh;
+    color: #8d969a;
+}
+
+.mainContainer .left .tag{
+    font-weight: medium;
+    color:#006083;
+}
+
+
+.mainContainer .left .skillSet{
+    width: 80%;
+    height: 20%;
+    margin-top: 3vh;
+    font-weight: medium;
+    color:#006083;
+}
+
+.mainContainer .left .skillSet .tag{
+    
+    font-weight: medium;
+    color:#006083;
+}
+
+.mainContainer .left .skillSet p{
+  margin: 0;
+  margin-top: 5px;
+  color: #8d969a;
+}
+
+.mainContainer .left .skillSet .tag{
+    font-weight: bold;
+}
+
+.mainContainer .left .contact{
+    width: 50%;
+    height: 8%;
+    text-align: center;
+    background-color: #006083;
+    border-radius: 10px;
+    color: white;
+    
+}
+
+.mainContainer .right{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    height: 90vh;
+    margin-left: 5vw;
+    margin-top: 5vh;
+}
+
+.mainContainer .right .top{
+
+    margin-top: 2vh;
+    color: #006083;
+    font-weight: bold;
+    height: 5%;
+    margin-left: 5%;
+}
+
+.mainContainer .right .bottom{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90%;
+    flex-wrap:wrap;
+
+}
+
+.mainContainer .right .bottom .card{
+    width: 20%;
+    height: 40%;
+    background-color: #ffffff;
+    margin-top: 3%;
+    margin-left: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 3px #8d969a;
+}
+
+.mainContainer .right .bottom .card .secondContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 5%;
+    
+}
+
+
+.mainContainer .right .bottom .img{
+    width: 85%;
+    height: 45%;
+    margin-top: 4%;
+}
+
+.mainContainer .right .bottom .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    
+}
+
+.mainContainer .right .bottom .card .privateHouse{
+    font-size: 10px;
+    margin: 0;
+    color: #8d969a;
+    margin-top: 3%;
+}
+
+.mainContainer .right .bottom .card .privateHouse1{
+    font-size: 12px;
+    margin: 0;
+    color: #006083;
+    font-weight: bold;
+    margin-top: 1%;
+}
+
+.mainContainer .right .bottom .card .site{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+}
+
+.mainContainer .right .bottom .card .site img{
+   width: 15px;
+   height: 15px;
+}
+
+.mainContainer .right .bottom .card .site .site-font{
+    font-size: 10px;
+    color: #8d969a;
+ }
+
+ .mainContainer .right .bottom .card .price{
+    margin-top: 3%;
+    font-size: 10px;
+    font-weight: bold;
+    color:#8d969a;
+ }
+
+ .mainContainer .right .bottom .card .structure{
+    font-size: 10px;
+    color:#8d969a;
+    margin-top: 1%;
+ }
+ 
+ .mainContainer .right .bottom .card .timeStamp{
+    font-size: 7px;
+    color:#8d969a;
+    margin-top: 1%;
+
+ }
+
+ .mainContainer .right .bottom .card p{
+    margin:0;
+ }
+
+
+
+
