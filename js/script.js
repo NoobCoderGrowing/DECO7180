@@ -43,11 +43,10 @@ function updateResult(query) {
 }
 
 var indexOfLang = 0;
-// var opDic = {};
+//  Arjun Mahishi.(2017) Real-time search using basic JavaScript. https://codingislove.com/realtime-search-javascript/
 function generateBox(boxContent){
     $('.result').hide();
     let resultList = document.querySelector(".result");
-    // var div=document.createElement('div');
     var div = $('#optionsBox');
     var word = boxContent+"";
     div.append('<p class="options" id="option-' +indexOfLang+'-'+ word+'" onclick = "deleteOption(this)"></p>');
