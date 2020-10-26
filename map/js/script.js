@@ -1,9 +1,9 @@
 function landLord(){
-    window.location="../landlord.html";
+    window.location="../landlord.php";
 }
 
 function home(){
-    window.location="../index.html";
+    window.location="../index.php";
 }
 
 window.onload=function(){

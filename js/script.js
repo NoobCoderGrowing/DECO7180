@@ -258,7 +258,7 @@ function getOptions(){
          return;
      }else{
      }
-     window.location='./map/index.html';
+     window.location='./map/index.php';
  }
 
     
