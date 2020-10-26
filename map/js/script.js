@@ -1,11 +1,13 @@
+//navigate to lanlord page
 function landLord(){
     window.location="../landlord.html";
 }
 
+//navigate to home page
 function home(){
     window.location="../index.html";
 }
-
+//process the data transfered from home page
 window.onload=function(){
     if(localStorage.getItem('newTotalNumber')!='{}'&&localStorage.getItem('newQueryResult')!='{}'){
         console.log(JSON.parse(localStorage.getItem('newTotalNumber')));

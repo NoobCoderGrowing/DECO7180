@@ -125,7 +125,7 @@ function deleteLangInList(word){
 
 
 
-
+// translate user choice of language into the parameter used to query API
 function getQueryVaribale(element){
     switch(element){
         case "French":
@@ -170,7 +170,7 @@ function getQueryVaribale(element){
             break
     }
 }
-
+// Do the actual query using fetch
 function queryAPI(language){
     fetch(
         `http://stat.data.abs.gov.au/sdmx-json/data/ABS_C16_T09_SA/3.${queryVaribale.languageCode}.3.SA4.301+302+303+304+305/all?startTime=2016&endTime=2016`,{
@@ -244,6 +244,8 @@ function getTotalNumber(){
     });
 }
 
+
+// after clicking search, call getQueryVariable() and queryAPI
 function getOptions(){
     options.forEach(element=>{
         getQueryVaribale(element);
