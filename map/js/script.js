@@ -186,14 +186,27 @@ $.fn.ad=function()
 	}
 }
 
+function popup(){
+    console.log(1);
+    var a=Document.querySelector("#map").style;
+    console.log(a);
+    
+//    pop.style.visibility='visible';
+//    pop.style.opacity=1;
+}
 
 //map zoom
 var layer = [];
 function mapzoom(area){
     if(area=="north"){
         map.setView([-27.36005, 153.06406], 12);
-        var marker_north = L.marker([-27.3, 153.04]).addTo(map);
-        var marker_north = L.marker([-27.36005, 153.06406]).addTo(map);      
+        // var marker_north = L.marker([-27.3, 153.04]).addTo(map);
+        // var marker_north = L.marker([-27.36005, 153.06406]).addTo(map);
+        var marker_north1 = L.marker([-27.3, 153.04]).addTo(map);
+        var marker_north2 = L.marker([-27.36005, 153.06406]).addTo(map);
+        marker_north1.onclick=popup();
+        marker_north2.onclick=popup();
+    
     }
     if(area=="center"){
         map.setView([-27.45499, 153.02828], 13);
