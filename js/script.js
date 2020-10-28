@@ -43,11 +43,10 @@ function updateResult(query) {
 }
 
 var indexOfLang = 0;
-// var opDic = {};
+//  Arjun Mahishi.(2017) Real-time search using basic JavaScript. https://codingislove.com/realtime-search-javascript/
 function generateBox(boxContent){
     $('.result').hide();
     let resultList = document.querySelector(".result");
-    // var div=document.createElement('div');
     var div = $('#optionsBox');
     var word = boxContent+"";
     div.append('<p class="options" id="option-' +indexOfLang+'-'+ word+'" onclick = "deleteOption(this)"></p>');
@@ -74,16 +73,18 @@ function generateBox(boxContent){
     });
 
     arr.remove(boxContent);
-    langOption.text(boxContent + " x");
+    langOption.text(boxContent + "  x");
     langOption.css('width', 88);
     langOption.css('height', 20);
     langOption.css('margin-right', 15);
     langOption.css('border-style', 'solid');
-    langOption.css('border-width', '2px');
+    langOption.css('border-width', '1px');
     langOption.css('text-align', 'center');
     langOption.css('border-radius', '10px');
     langOption.css('padding-left', '10px');
     langOption.css('padding-right', '3px');
+    langOption.css('border-color', 'grey');
+    langOption.css('color', 'grey');
     langOption.css('float', 'left');
     langOption.hover(function(){
         langOption.css("background-color","rgb(190, 190, 190)");
@@ -126,7 +127,7 @@ function deleteLangInList(word){
 
 
 
-
+// translate user choice of language into the parameter used to query API
 function getQueryVaribale(element){
     switch(element){
         case "French":
@@ -171,7 +172,7 @@ function getQueryVaribale(element){
             break
     }
 }
-
+// Do the actual query using fetch
 function queryAPI(language){
     fetch(
         `http://stat.data.abs.gov.au/sdmx-json/data/ABS_C16_T09_SA/3.${queryVaribale.languageCode}.3.SA4.301+302+303+304+305/all?startTime=2016&endTime=2016`,{
@@ -245,6 +246,8 @@ function getTotalNumber(){
     });
 }
 
+
+// after clicking search, call getQueryVariable() and queryAPI
 function getOptions(){
     options.forEach(element=>{
         getQueryVaribale(element);
@@ -267,8 +270,8 @@ function getOptions(){
 function changeImage(element){
     console.log(element.id);
     var elementId =  $('#'+ element.id);
-    elementId.css('right', '-3.5px');
-    elementId.css('width', '12px');
+    elementId.css('right', '-2.5px');
+    elementId.css('width', '11px');
 
     if (element.id == 'button1'){
         console.log('right');

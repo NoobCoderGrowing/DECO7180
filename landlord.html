@@ -6,18 +6,16 @@
         <link rel="stylesheet" href="css/landLordStyle.css">
         <link rel="stylesheet" href="css/propertiesDetails.css">
         <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/script.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script src="js/jquery.cycle2.js"></script>
         <script src="js/jquery.cycle2.carousel.js"></script>
         <script src="js/popup.js"></script>
         <link rel="stylesheet" type="text/css" href="./imagesForLandloard/font/iconfont.css">
-        
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
     </head>
 
     <body>
         <script>$( '.slideshow' ).cycle();</script>
-
 
         <div id = "show-popup">
 
@@ -25,7 +23,6 @@
                 <nav class="close-button">
                     <a href="index.html"> </a>
                 </nav>
-
                 <figure class="house-image">
                     <img src="images/pexels-binyamin-mellish-106399.jpg" alt="properties-images">
                 </figure>
@@ -56,7 +53,7 @@
                 <p id = 'room-type'>Two Bedroom House</p>
 
                 <p id="basic-info">Private house</p>
-                <p id="price">$400/mouth</p>
+                <p id="price">$400/month</p>
 
                 <div id = 'detaile'>
                     <p class="detail">90 Foot Square &nbsp;&nbsp;&nbsp;  1 Floor &nbsp;&nbsp;&nbsp;  2 Beds &nbsp;&nbsp;&nbsp;  2 Baths &nbsp;&nbsp;&nbsp;  1 Kitchen  &nbsp;&nbsp;&nbsp;  1 Garage</p>
@@ -101,21 +98,8 @@
             </section>
 
             <section id = 'book'>
-                <div class = 'people'>
-                    <a id = 'people-minus' title="Click to reduce people"><img src="images/icons8-minus-32.png"></a>
-                    <p>$10 <br> 1 people</p>
-                    <a id = 'people-plus' title="Click to add people"><img src="images/icons8-plus-32.png"></a>
-                </div>
-                <div class = 'room'>
-                    <a id = 'room-minus' title="Click to reduce room"><img src="images/icons8-minus-32.png"></a>
-                    <p>$200 <br> 1 room</p>
-                    <a id = 'room-plus' title="Click to add room"><img src="images/icons8-plus-32.png"></a>
-                </div>
-
                 <button id = 'book-button'>Book</button>
             </section>
-
-
             </section>
 
             <section class="contact-form">
@@ -139,7 +123,7 @@
                     <p class="form-title">Credit Card info</p>
                     <form class="form">
                         CARD NUMBER:<br>
-                        <input type="text" name="firstname">
+                        <input id = 'cardNum' type="text" name="firstname">
                         <br>
                          CARD HOLDER NAME:<br>
                         <input type="text" name="holder name">
@@ -148,7 +132,7 @@
                         <input type="date" name="date">
                         <br>
                          CVV:<br>
-                        <input type="text" name="cvv">
+                        <input id = 'cvv' type="text" name="cvv">
                      </form>
                 </div>
             </section>
@@ -188,7 +172,7 @@
 
                 <div class="skillSet">
                     <p class="tag">Skillset</p>
-                    <p>Pick up at the asirport</p>
+                    <p>Pick up at the airport</p>
                     <p>Cook home meals</p>
                     <p>Fix home appliance</p>
                 </div>

@@ -5,15 +5,161 @@
 		<title>Week 6 Workshop: Exercise 2</title>
 		<link rel="stylesheet" href="css/leaflet.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/propertiesDetails.css">
+
+
+		<script src="js/jquery-3.4.1.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="js/jquery.cycle2.js"></script>
+        <script src="js/jquery.cycle2.carousel.js"></script>
+
 	</head>
 	<body>
-		<div id=logo>
-			<img id='home' src="./css/images/home.png">
-			<a class="navigation" href="../index.html">HOME</a>
-			<img src="./css/images/5plus1.png"> 	
+		<div id = "show-popup">
+
+			<section class="properties-details">
+				<nav class="close-button">
+					<a href="index.html"> </a>
+				</nav>
+
+				<figure class="house-image">
+					<img src="images/pexels-binyamin-mellish-106399.jpg" alt="properties-images">
+				</figure>
+
+		<section id = 'images-loading'>
+			
+			<div class="slideshow"
+				data-cycle-fx=carousel
+				data-cycle-timeout=0
+				data-cycle-carousel-visible=4
+				data-cycle-next="#next"
+				data-cycle-prev="#prev"
+				data-cycle-pager="#pager"
+				>
+				<img src="images/pexels-cleyder-duque-3637739.jpg">
+				<img src="images/pexels-pixabay-279719.jpg">
+				<img src="images/pexels-terry-magallanes-2635038.jpg">    
+				<img src="images/image_3.png">
+			</div>
+
+			<div class="center">
+				<a href=# id=prev>&lt;</a>
+				<a href=# id=next>&gt;</a>
+			</div>
+		</section>
+
+			<section id = 'properties-details-info'>
+				<p id = 'room-type'>Two Bedroom House</p>
+
+				<p id="basic-info">Private house</p>
+				<p id="price">$400/month</p>
+
+				<div id = 'detaile'>
+					<p class="detail">90 Foot Square &nbsp;&nbsp;&nbsp;  1 Floor &nbsp;&nbsp;&nbsp;  2 Beds &nbsp;&nbsp;&nbsp;  2 Baths &nbsp;&nbsp;&nbsp;  1 Kitchen  &nbsp;&nbsp;&nbsp;  1 Garage</p>
+				</div>
+
+				<section id = 'location'>
+					<p id = 'location-title'>Location</p>
+
+					<figure class = 'detailed-location'>
+						<img src="images/icons8-marker-32.png">
+						<p id = 'detailed-location-p'>64 Cornwall Street, Annerley, 4103, Brisbane, QLD</p>
+					</figure>
+					<section id = 'nearby'>
+						<div class = 'nearby'>
+							<p class="nearby-facility">Market</p>
+							<p class="nearby-facility-name">Woolworths Annerley</p>
+							<p class="nearby-facility-distance">10 min drive     20 min walk</p>
+						</div>
+
+						<div class = 'nearby'>
+							<p class="nearby-facility">Gym</p>
+							<p class="nearby-facility-name">Buranda Snap Fitness</p>
+							<p class="nearby-facility-distance">5 min drive     10 min walk</p>
+						</div>
+
+						<div class = 'nearby'>
+							<p class="nearby-facility">Resturant</p>
+							<p class="nearby-facility-name">Oporto</p>
+							<p class="nearby-facility-distance">10 min drive  20 min walk</p>
+						</div>
+					</section>
+				</section>
+
+				<section id = 'furniture'>
+					<p class="f-title">Furniture</p>
+					<p class="furnitures">Desk</p>
+					<p class="furnitures">Oven</p>
+					<p class="furnitures">Microwave</p>
+					<p class="furnitures">Laundry machine</p>
+					<p class="furnitures">Eating table and chairs</p>
+				</section>
+			</section>
+
+			<section id = 'book'>
+				<div class = 'people'>
+					<a id = 'people-minus' title="Click to reduce people"><img src="images/icons8-minus-32.png"></a>
+					<p>$10 <br> 1 people</p>
+					<a id = 'people-plus' title="Click to add people"><img src="images/icons8-plus-32.png"></a>
+				</div>
+				<div class = 'room'>
+					<a id = 'room-minus' title="Click to reduce room"><img src="images/icons8-minus-32.png"></a>
+					<p>$200 <br> 1 room</p>
+					<a id = 'room-plus' title="Click to add room"><img src="images/icons8-plus-32.png"></a>
+				</div>
+
+				<button id = 'book-button'>Book</button>
+			</section>
+
+
+			</section>
+
+			<section class="contact-form">
+				<div id = 'form-1'>
+					<p class="form-title">Booking details</p>
+					<form class="form">
+					   FULL NAME:<br>
+					   <input type="text" name="firstname">
+					   <br>
+						Day of moving in:<br>
+					   <input type="date" name="day">
+					   <br>
+						PHONE NUMBER:<br>
+					   <input type="text" name="phonenum">
+					   <br>
+						EMAIL:<br>
+					   <input type="text" name="email">
+					</form> 
+				</div>
+				<div id = 'form-2'>
+					<p class="form-title">Credit Card info</p>
+					<form class="form">
+						CARD NUMBER:<br>
+						<input type="text" name="firstname">
+						<br>
+						 CARD HOLDER NAME:<br>
+						<input type="text" name="holder name">
+						<br>
+						EXPIRE DATE:<br>
+						<input type="date" name="date">
+						<br>
+						 CVV:<br>
+						<input type="text" name="cvv">
+					 </form>
+				</div>
+			</section>
 		</div>
 
+		
+		<div id=logo>
+			<img src="./css/images/5plus1.png">
+			<!-- <div>Back to search</div> 	 -->
+		</div>
+
+
 		<article id="map">
+			
+
 
 			<div class="content">
 				
